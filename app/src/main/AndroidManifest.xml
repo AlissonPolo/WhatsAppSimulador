@@ -26,6 +26,8 @@
         <activity android:name=".ui.ConfiguracionActivity" android:exported="true"/>
         <activity android:name=".ui.EstadosActivity" android:exported="true"/>
         <activity android:name=".ui.GruposActivity" android:exported="true"/>
+        <activity android:name=".ui.VerFotoActivity" />
+
 
         <!-- NUEVAS ACTIVIDADES -->
         <activity android:name=".ui.ListaContactosActivity" android:exported="true"/>
