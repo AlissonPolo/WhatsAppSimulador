@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ECE5DD">
+
+    <!-- Toolbar estilo WhatsApp -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#075E54"
+        android:title="Grupos"
+        android:titleTextColor="@android:color/white"
+        app:navigationIcon="@drawable/ic_back_24"
+        app:titleCentered="true" />
+
+    <!-- Lista de grupos -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvGrupos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:clipToPadding="false"
+        android:scrollbars="vertical"/>
+</LinearLayout>

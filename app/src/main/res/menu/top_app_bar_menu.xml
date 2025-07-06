@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Ícono cámara visible siempre en la barra -->
+    <item
+        android:id="@+id/menu_camara"
+        android:icon="@drawable/ic_camara"
+        android:title="Cámara"
+        app:showAsAction="always" />
+
+    <!-- Menú desplegable con los tres puntos -->
+    <item
+        android:id="@+id/menu_overflow"
+        android:title="Más opciones"
+        android:icon="@drawable/ic_more_vert"
+        app:showAsAction="ifRoom|withText"
+        android:orderInCategory="100">
+
+        <menu>
+            <item
+                android:id="@+id/menu_perfil"
+                android:title="Perfil"
+                android:icon="@drawable/ic_person" />
+            <item
+                android:id="@+id/menu_ajustes"
+                android:title="Ajustes"
+                android:icon="@drawable/ic_config" />
+        </menu>
+    </item>
+</menu>

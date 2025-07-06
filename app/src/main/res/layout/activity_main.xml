@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECE5DD">
+
+    <!-- Barra superior con título y menú -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#075E54"
+        android:title="Wasap"
+        android:titleTextColor="@android:color/white"
+        app:titleCentered="false"
+        app:menu="@menu/top_app_bar_menu" />
+
+    <!-- Lista de chats -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvContactos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_marginBottom="80dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <!-- Botón flotante "+" -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAgregar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="88dp"
+        android:src="@drawable/ic_add"
+        app:backgroundTint="#25D366"
+        android:contentDescription="Agregar nuevo chat" />
+
+    <!-- Barra inferior de navegación -->
+    <LinearLayout
+        android:id="@+id/botones"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom"
+        android:background="#075E54"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <!-- Estados -->
+        <LinearLayout
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:padding="4dp">
+
+            <ImageButton
+                android:id="@+id/btnEstados"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_estado"
+                android:contentDescription="Estados"
+                app:tint="@android:color/white"
+                android:padding="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Estados"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:paddingTop="2dp" />
+        </LinearLayout>
+
+        <!-- Grupos -->
+        <LinearLayout
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:padding="4dp">
+
+            <ImageButton
+                android:id="@+id/btnGrupos"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_grupo"
+                android:contentDescription="Grupos"
+                app:tint="@android:color/white"
+                android:padding="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Grupos"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:paddingTop="2dp" />
+        </LinearLayout>
+
+        <!-- Chats -->
+        <LinearLayout
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:padding="4dp">
+
+            <ImageButton
+                android:id="@+id/btnChats"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_chat"
+                android:contentDescription="Chats"
+                app:tint="@android:color/white"
+                android:padding="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chats"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:paddingTop="2dp" />
+        </LinearLayout>
+
+        <!-- Llamadas -->
+        <LinearLayout
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:padding="4dp">
+
+            <ImageButton
+                android:id="@+id/btnLlamadas"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_llamada"
+                android:contentDescription="Llamadas"
+                app:tint="@android:color/white"
+                android:padding="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Llamadas"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:paddingTop="2dp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
