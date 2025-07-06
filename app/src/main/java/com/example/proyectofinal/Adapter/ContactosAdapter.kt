@@ -1,18 +1,19 @@
 package com.example.proyectofinal.adapter
 
-import android.util.Log
+import Contacto
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.proyectofinal.R
-import com.example.proyectofinal.model.Contacto
 
 class ContactosAdapter(
     private val contactos: List<Contacto>,
-    private val onClick: (Contacto) -> Unit
+    private val onClick: (Contacto) -> Unit,
+    private val onFotoClick: (Contacto) -> Unit
 ) : RecyclerView.Adapter<ContactosAdapter.ContactoViewHolder>() {
 
     inner class ContactoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -28,19 +29,26 @@ class ContactosAdapter(
         return ContactoViewHolder(view)
     }
 
-    // En ContactosAdapter.kt
     override fun onBindViewHolder(holder: ContactoViewHolder, position: Int) {
         val contacto = contactos[position]
+
+        // Carga la foto
+        holder.ivPerfil.setImageResource(contacto.fotoPerfilResId)
+
+        // MUY IMPORTANTE: Mostrar nombre y último mensaje
         holder.tvNombre.text = contacto.nombre
         holder.tvUltimoMensaje.text = contacto.ultimoMensaje
         holder.tvHora.text = contacto.horaUltimoMensaje
-        holder.ivPerfil.setImageResource(contacto.fotoPerfilResId)
-        Log.d("ContactosAdapter", "onBind: ${contacto.nombre} - ${contacto.ultimoMensaje} @ ${contacto.horaUltimoMensaje}")
+
+        holder.ivPerfil.setOnClickListener {
+            onFotoClick(contacto)
+        }
 
         holder.itemView.setOnClickListener {
             onClick(contacto)
         }
     }
+
 
 
     override fun getItemCount() = contactos.size

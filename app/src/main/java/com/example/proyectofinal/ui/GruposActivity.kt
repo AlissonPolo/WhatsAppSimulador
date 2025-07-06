@@ -1,11 +1,11 @@
 package com.example.proyectofinal.ui
 
+import Contacto
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.proyectofinal.adapter.GruposAdapter
 import com.example.proyectofinal.databinding.ActivityGruposBinding
-import com.example.proyectofinal.model.Contacto
 import com.example.proyectofinal.model.Grupo
 
 class GruposActivity : AppCompatActivity() {

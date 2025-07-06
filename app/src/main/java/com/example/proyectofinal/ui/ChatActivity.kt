@@ -1,6 +1,6 @@
 package com.example.proyectofinal.ui
 
-import android.content.Intent
+import Contacto
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageButton
@@ -10,24 +10,25 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectofinal.R
 import com.example.proyectofinal.adapter.MensajesAdapter
 import com.example.proyectofinal.model.Mensaje
+import com.example.proyectofinal.model.listaGlobalContactos
 import java.text.SimpleDateFormat
 import java.util.*
 
 class ChatActivity : AppCompatActivity() {
 
-    private val mensajes = mutableListOf<Mensaje>()
-    private var siguienteIdMensaje = 1
     private lateinit var adapter: MensajesAdapter
-    private var contactoId = -1
-    private var contactoNombre = "Chat"
+    private lateinit var contacto: Contacto
+    private lateinit var mensajes: MutableList<Mensaje>
+    private var siguienteIdMensaje = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
 
-        contactoId = intent.getIntExtra("contactoId", -1)
-        contactoNombre = intent.getStringExtra("contactoNombre") ?: "Chat"
-        title = contactoNombre
+        val contactoId = intent.getIntExtra("contactoId", -1)
+        contacto = listaGlobalContactos.first { it.id == contactoId }
+        mensajes = contacto.mensajes
+        title = contacto.nombre
 
         val rvMensajes: RecyclerView = findViewById(R.id.recyclerView)
         val etMensaje: EditText = findViewById(R.id.etMessage)
@@ -41,40 +42,29 @@ class ChatActivity : AppCompatActivity() {
             val texto = etMensaje.text.toString().trim()
             if (texto.isNotEmpty()) {
                 val mensaje = Mensaje(siguienteIdMensaje++, texto, true, System.currentTimeMillis())
-                mensajes.add(mensaje)
+                contacto.agregarMensaje(mensaje) // Esto actualiza mensajes, último mensaje y hora
                 adapter.notifyItemInserted(mensajes.size - 1)
                 rvMensajes.scrollToPosition(mensajes.size - 1)
                 etMensaje.text.clear()
 
-                // Actualizamos el resultado para MainActivity
-                enviarResultado(mensaje)
-
-                responderAutomaticamente(contactoNombre)
+                responderAutomaticamente()
             }
         }
     }
 
-    private fun enviarResultado(mensaje: Mensaje) {
-        val intent = Intent()
-        intent.putExtra("contactoId", contactoId)
-        intent.putExtra("ultimoMensaje", mensaje.texto)
-        intent.putExtra("horaMensaje", formatearHora(mensaje.timestamp))
-        setResult(RESULT_OK, intent)
+    private fun responderAutomaticamente() {
+        val respuesta = Mensaje(
+            siguienteIdMensaje++,
+            "Respuesta automática de ${contacto.nombre}",
+            false,
+            System.currentTimeMillis()
+        )
+        contacto.agregarMensaje(respuesta)
+        adapter.notifyItemInserted(mensajes.size - 1)
     }
 
     private fun formatearHora(timestamp: Long): String {
         val sdf = SimpleDateFormat("hh:mm a", Locale.getDefault())
         return sdf.format(Date(timestamp))
-    }
-
-    private fun responderAutomaticamente(nombre: String) {
-        val respuesta = Mensaje(
-            siguienteIdMensaje++,
-            "Respuesta automática de $nombre",
-            false,
-            System.currentTimeMillis()
-        )
-        mensajes.add(respuesta)
-        adapter.notifyItemInserted(mensajes.size - 1)
     }
 }

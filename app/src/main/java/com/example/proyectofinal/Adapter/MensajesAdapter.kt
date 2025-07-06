@@ -1,8 +1,10 @@
 package com.example.proyectofinal.adapter
 
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectofinal.R
@@ -21,25 +23,18 @@ class MensajesAdapter(private val mensajes: List<Mensaje>) :
         val mensaje = mensajes[position]
         holder.txtMensaje.text = mensaje.texto
 
-        // Usamos esEmisorUsuario en vez de esUsuario
+        // Fondo diferente para emisor/receptor
         val background = if (mensaje.esEmisorUsuario) {
             R.drawable.message_background_user
         } else {
             R.drawable.message_background
         }
-
         holder.txtMensaje.setBackgroundResource(background)
 
-        // Alinear el mensaje
-        val params = holder.txtMensaje.layoutParams as ViewGroup.MarginLayoutParams
-        if (mensaje.esEmisorUsuario) {
-            params.marginStart = 100
-            params.marginEnd = 0
-        } else {
-            params.marginStart = 0
-            params.marginEnd = 100
-        }
-        holder.txtMensaje.layoutParams = params
+        // Alineación usando layout_gravity de FrameLayout.LayoutParams
+        val layoutParams = holder.txtMensaje.layoutParams as FrameLayout.LayoutParams
+        layoutParams.gravity = if (mensaje.esEmisorUsuario) Gravity.END else Gravity.START
+        holder.txtMensaje.layoutParams = layoutParams
     }
 
     override fun getItemCount(): Int = mensajes.size
