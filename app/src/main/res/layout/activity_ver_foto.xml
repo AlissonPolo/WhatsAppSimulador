@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E8F0F0">
+    android:background="@android:color/black">
 
     <ImageView
         android:id="@+id/imgFotoAmpliada"
@@ -10,6 +10,6 @@
         android:layout_height="match_parent"
         android:scaleType="fitCenter"
         android:contentDescription="Foto ampliada"
-        android:adjustViewBounds="true" />
-
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent" />
 </FrameLayout>

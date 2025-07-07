@@ -1,6 +1,7 @@
 package com.example.proyectofinal.model
 
 import Contacto
+import com.example.proyectofinal.R
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -11,49 +12,49 @@ fun obtenerHoraActual(): String {
 
 val listaGlobalContactos = mutableListOf(
     Contacto(
-        1, "Alisson Polo", "¿Cómo estás?", obtenerHoraActual(),
+        1, "Alisson Polo", "¿Cómo estás?", obtenerHoraActual(),fotoPerfilResId = R.drawable.mujer1,
         mensajes = mutableListOf(
             Mensaje(1, "¿Cómo estás?", false, System.currentTimeMillis())
         )
     ),
     Contacto(
-        2, "Juan Pérez", "Ok, nos vemos", obtenerHoraActual(),
+        2, "Juan Pérez", "Ok, nos vemos", obtenerHoraActual(),fotoPerfilResId = R.drawable.hombre1,
         mensajes = mutableListOf(
             Mensaje(2, "Ok, nos vemos", false, System.currentTimeMillis())
         )
     ),
     Contacto(
-        3, "María López", "Gracias!", obtenerHoraActual(),
+        3, "María López", "Gracias!", obtenerHoraActual(),fotoPerfilResId = R.drawable.mujer2,
         mensajes = mutableListOf(
             Mensaje(3, "Gracias!", false, System.currentTimeMillis())
         )
     ),
     Contacto(
-        4, "Carlos Díaz", "Nos hablamos luego", obtenerHoraActual(),
+        4, "Carlos Díaz", "Nos hablamos luego", obtenerHoraActual(),fotoPerfilResId = R.drawable.hombre2,
         mensajes = mutableListOf(
             Mensaje(4, "Nos hablamos luego", false, System.currentTimeMillis())
         )
     ),
     Contacto(
-        5, "Laura Méndez", "Hola, ¿todo bien?", obtenerHoraActual(),
+        5, "Laura Méndez", "Hola, ¿todo bien?", obtenerHoraActual(),fotoPerfilResId = R.drawable.mujer3,
         mensajes = mutableListOf(
             Mensaje(5, "Hola, ¿todo bien?", false, System.currentTimeMillis())
         )
     ),
     Contacto(
-        6, "Pedro Ruiz", "¡Nos vemos mañana!", obtenerHoraActual(),
+        6, "Pedro Ruiz", "¡Nos vemos mañana!", obtenerHoraActual(),fotoPerfilResId = R.drawable.hombre3,
         mensajes = mutableListOf(
             Mensaje(6, "¡Nos vemos mañana!", false, System.currentTimeMillis())
         )
     ),
     Contacto(
-        7, "Carlos Díaz", "Nos hablamos luego", obtenerHoraActual(),
+        7, "Carlos Díaz", "Nos hablamos luego", obtenerHoraActual(),fotoPerfilResId = R.drawable.hombre4,
         mensajes = mutableListOf(
             Mensaje(4, "Nos hablamos luego", false, System.currentTimeMillis())
         )
     ),
     Contacto(
-        8, "Laura Méndez", "Hola, ¿todo bien?", obtenerHoraActual(),
+        8, "Laura Méndez", "Hola, ¿todo bien?", obtenerHoraActual(),fotoPerfilResId = R.drawable.mujer4,
         mensajes = mutableListOf(
             Mensaje(5, "Hola, ¿todo bien?", false, System.currentTimeMillis())
         )
@@ -65,7 +66,7 @@ val listaGlobalContactos = mutableListOf(
         )
     ),
     Contacto(
-        10, "Daniela Torres", "Estoy ocupada, luego te llamo", obtenerHoraActual(),
+        10, "Daniela Torres", "Estoy ocupada, luego te llamo", obtenerHoraActual(),fotoPerfilResId = R.drawable.mujer5,
         mensajes = mutableListOf(
             Mensaje(7, "Estoy ocupada, luego te llamo", false, System.currentTimeMillis())
         )
