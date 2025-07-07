@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/chatLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#ECE5DD">
+    android:background="#ECE5DD"
+    android:orientation="vertical">
 
     <!-- Toolbar personalizada -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="#075E54"
-        android:orientation="horizontal"
         android:gravity="center_vertical"
+        android:orientation="horizontal"
         android:paddingStart="8dp"
         android:paddingEnd="8dp">
 
@@ -22,10 +21,10 @@
             android:id="@+id/imgChatPerfil"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:scaleType="centerCrop"
             android:background="@drawable/circle_background"
             android:clipToOutline="true"
-            android:contentDescription="Foto perfil" />
+            android:contentDescription="Foto perfil"
+            android:scaleType="centerCrop" />
 
         <TextView
             android:id="@+id/txtChatNombre"
@@ -42,29 +41,29 @@
             android:id="@+id/btnVideo"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:padding="4dp"
             android:layout_marginStart="8dp"
-            android:src="@drawable/ic_video_call"
             android:contentDescription="Videollamada"
+            android:padding="4dp"
+            android:src="@drawable/ic_video_call"
             app:tint="@android:color/white" />
 
         <ImageView
             android:id="@+id/btnLlamada"
             android:layout_width="32dp"
             android:layout_height="32dp"
+            android:contentDescription="Llamar"
             android:padding="4dp"
             android:src="@drawable/ic_call"
-            android:contentDescription="Llamar"
             app:tint="@android:color/white" />
 
         <ImageView
             android:id="@+id/btnMenu"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:padding="4dp"
             android:layout_marginStart="8dp"
-            android:src="@drawable/ic_more_vert"
             android:contentDescription="Menú"
+            android:padding="4dp"
+            android:src="@drawable/ic_more_vert"
             app:tint="@android:color/white" />
     </LinearLayout>
 
@@ -74,17 +73,17 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:padding="8dp"
-        android:overScrollMode="never" />
+        android:overScrollMode="never"
+        android:padding="8dp" />
 
     <!-- Barra de mensaje tipo WhatsApp -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="4dp"
         android:background="#ECECEC"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="4dp">
 
         <!-- Emoji -->
         <ImageButton
@@ -92,37 +91,36 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_emoji"
             android:contentDescription="Emoji"
-            app:tint="#128C7E"
-            android:padding="12dp" />
+            android:padding="12dp"
+            android:src="@drawable/ic_emoji"
+            app:tint="#128C7E" />
 
         <!-- Campo de texto con íconos dentro -->
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="48dp"
             android:layout_marginStart="4dp"
             android:layout_marginEnd="4dp"
+            android:layout_weight="1"
             android:background="@drawable/bg_edittext_rounded"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/etMessage"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="48dp"
-                android:hint="Escribe un mensaje"
+                android:layout_weight="1"
                 android:background="@drawable/bg_edittext_chat"
+                android:hint="Escribe un mensaje"
+                android:inputType="textMultiLine|textCapSentences"
+                android:maxLines="4"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
-
                 android:textColor="#222222"
-                app:hintTextColor="#999999"
                 android:textSize="16sp"
-                android:maxLines="4"
-                android:inputType="textMultiLine|textCapSentences" />
+                app:hintTextColor="#999999" />
 
 
             <ImageButton
@@ -130,20 +128,20 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_adjuntar"
                 android:contentDescription="Adjuntar"
-                app:tint="#128C7E"
-                android:padding="12dp" />
+                android:padding="12dp"
+                android:src="@drawable/ic_adjuntar"
+                app:tint="#128C7E" />
 
             <ImageButton
                 android:id="@+id/btnCamara"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_camara"
                 android:contentDescription="Cámara"
-                app:tint="#128C7E"
-                android:padding="12dp" />
+                android:padding="12dp"
+                android:src="@drawable/ic_camara"
+                app:tint="#128C7E" />
         </LinearLayout>
 
         <!-- Botón enviar -->
@@ -152,8 +150,8 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_send_24dp"
             android:contentDescription="Enviar mensaje"
+            android:src="@drawable/ic_send_24dp"
             app:tint="#128C7E" />
     </LinearLayout>
 </LinearLayout>
