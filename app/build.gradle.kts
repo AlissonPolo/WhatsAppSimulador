@@ -54,6 +54,7 @@ dependencies {
     // Room
     implementation("androidx.room:room-runtime:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
+    implementation(libs.androidx.espresso.core)
     kapt("androidx.room:room-compiler:2.6.1")
     implementation("com.google.code.gson:gson:2.10.1")
 
@@ -71,6 +72,8 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.15.1")
     kapt("com.github.bumptech.glide:compiler:4.15.1")
 
+    // emojis
+    implementation ("com.vanniktech:emoji-google:0.8.0")
 
 
     testImplementation(libs.junit)
