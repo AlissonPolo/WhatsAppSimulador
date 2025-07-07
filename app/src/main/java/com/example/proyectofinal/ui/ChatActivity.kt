@@ -4,6 +4,8 @@ import Contacto
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -33,6 +35,11 @@ class ChatActivity : AppCompatActivity() {
         val rvMensajes: RecyclerView = findViewById(R.id.recyclerView)
         val etMensaje: EditText = findViewById(R.id.etMessage)
         val btnEnviar: ImageButton = findViewById(R.id.btnSend)
+        val imgPerfil = findViewById<ImageView>(R.id.imgChatPerfil)
+        val txtNombre = findViewById<TextView>(R.id.txtChatNombre)
+
+        imgPerfil.setImageResource(contacto.fotoPerfilResId)
+        txtNombre.text = contacto.nombre
 
         adapter = MensajesAdapter(mensajes)
         rvMensajes.layoutManager = LinearLayoutManager(this)
