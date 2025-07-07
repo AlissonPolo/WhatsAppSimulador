@@ -15,7 +15,7 @@ data class Contacto(
 ) {
     fun agregarMensaje(mensaje: Mensaje) {
         mensajes.add(mensaje)
-        ultimoMensaje = mensaje.texto
+        ultimoMensaje = mensaje.texto ?: ""
         horaUltimoMensaje = SimpleDateFormat("hh:mm a", Locale.getDefault())
             .format(Date(mensaje.timestamp))
     }

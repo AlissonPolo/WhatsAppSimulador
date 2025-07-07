@@ -55,6 +55,7 @@ dependencies {
     implementation("androidx.room:room-runtime:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
     kapt("androidx.room:room-compiler:2.6.1")
+    implementation("com.google.code.gson:gson:2.10.1")
 
     // ViewModel y LiveData
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
@@ -69,6 +70,7 @@ dependencies {
     // Glide para carga de imágenes
     implementation("com.github.bumptech.glide:glide:4.15.1")
     kapt("com.github.bumptech.glide:compiler:4.15.1")
+
 
 
     testImplementation(libs.junit)

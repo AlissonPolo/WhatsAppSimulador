@@ -3,6 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.proyectofinal">
 
+    <!-- Cámara -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Almacenamiento -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
+
+    <!-- Android 13+ -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+
+
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -22,14 +36,10 @@
         </activity>
 
         <activity android:name=".ui.ChatActivity" android:exported="true"/>
-        <activity android:name=".ui.PerfilActivity" android:exported="true"/>
         <activity android:name=".ui.ConfiguracionActivity" android:exported="true"/>
         <activity android:name=".ui.EstadosActivity" android:exported="true"/>
         <activity android:name=".ui.GruposActivity" android:exported="true"/>
         <activity android:name=".ui.VerFotoActivity" />
-
-
-        <!-- NUEVAS ACTIVIDADES -->
         <activity android:name=".ui.ListaContactosActivity" android:exported="true"/>
         <activity android:name=".ui.LlamadasActivity" android:exported="true"/>
 
