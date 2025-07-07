@@ -88,13 +88,17 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             R.id.menu_perfil -> {
-                Toast.makeText(this, "Perfil clickeado", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, PerfilActivity::class.java)
+                startActivity(intent)
                 true
             }
+
             R.id.menu_ajustes -> {
-                Toast.makeText(this, "Ajustes clickeado", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, ConfiguracionActivity::class.java)
+                startActivity(intent)
                 true
             }
+
             else -> super.onOptionsItemSelected(item)
         }
     }

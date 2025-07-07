@@ -25,9 +25,14 @@ import java.text.SimpleDateFormat
 import java.util.*
 import android.Manifest
 import android.os.Build
-import android.widget.VideoView
+import android.view.ViewGroup
 import java.io.File
 import java.io.FileOutputStream
+import com.vanniktech.emoji.EmojiPopup
+import com.vanniktech.emoji.EmojiManager
+import com.vanniktech.emoji.google.GoogleEmojiProvider
+
+
 
 class ChatActivity : AppCompatActivity() {
 
@@ -42,6 +47,7 @@ class ChatActivity : AppCompatActivity() {
     private val REQUEST_IMAGE_OR_VIDEO = 1
     private lateinit var db: AppDatabase
     private lateinit var mensajeDao: MensajeDao
+    private lateinit var emojiPopup: EmojiPopup
 
 
 
@@ -66,8 +72,14 @@ class ChatActivity : AppCompatActivity() {
         val txtNombre = findViewById<TextView>(R.id.txtChatNombre)
         val btnCamara = findViewById<ImageButton>(R.id.btnCamara)
         val btnAdjuntar = findViewById<ImageButton>(R.id.btnAdjuntar)
+        val rootView = findViewById<ViewGroup>(R.id.chatLayout)
+        val btnEmoji = findViewById<ImageButton>(R.id.btnEmoji)
 
+        EmojiManager.install(GoogleEmojiProvider())
 
+        emojiPopup = EmojiPopup.Builder
+            .fromRootView(rootView)
+            .build(etMensaje)
 
         imgPerfil.setImageResource(contacto.fotoPerfilResId)
         txtNombre.text = contacto.nombre
@@ -108,6 +120,12 @@ class ChatActivity : AppCompatActivity() {
         btnAdjuntar.setOnClickListener {
             if (checkAndRequestStoragePermission()) abrirSelectorArchivos()
         }
+
+
+        btnEmoji.setOnClickListener {
+            emojiPopup.toggle()
+        }
+
     }
     private fun guardarMensaje(mensaje: Mensaje) {
         contacto.agregarMensaje(mensaje)
