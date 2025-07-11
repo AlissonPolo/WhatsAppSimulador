@@ -33,22 +33,13 @@
             android:textStyle="bold"/>
 
         <TextView
-            android:id="@+id/tvUltimoMensaje"
+            android:id="@+id/tvEstado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Último mensaje..."
+            android:text="Estado o info"
             android:textColor="#808080"
             android:textSize="14sp"
             android:maxLines="1"
             android:ellipsize="end" />
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/tvHora"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="12:00"
-        android:textColor="#808080"
-        android:textSize="12sp" />
 </LinearLayout>
-

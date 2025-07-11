@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         val toolbar = findViewById<MaterialToolbar>(R.id.topAppBar)
         setSupportActionBar(toolbar)
+        supportActionBar?.title = "Simulador WhatsApp"
 
         val fabAgregar = findViewById<FloatingActionButton>(R.id.fabAgregar)
         fabAgregar.setOnClickListener {

@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="#075E54"
-        android:title="Wasap"
+        android:title="Simulador WhatsApp"
         android:titleTextColor="@android:color/white"
         app:titleCentered="false"
         app:menu="@menu/top_app_bar_menu" />

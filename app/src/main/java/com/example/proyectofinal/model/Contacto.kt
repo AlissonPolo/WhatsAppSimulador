@@ -11,6 +11,8 @@ data class Contacto(
     var horaUltimoMensaje: String = "",
     val fotoPerfilResId: Int = R.drawable.ic_person,
     var fotoUri: String? = null,
+    val estado: String = "No estoy disponible",
+
     val mensajes: MutableList<Mensaje> = mutableListOf()
 ) {
     fun agregarMensaje(mensaje: Mensaje) {

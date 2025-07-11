@@ -22,7 +22,7 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Contactos"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoFinal"
@@ -41,9 +41,13 @@
         <activity android:name=".ui.EstadosActivity" android:exported="true"/>
         <activity android:name=".ui.GruposActivity" android:exported="true"/>
         <activity android:name=".ui.VerFotoActivity" />
-        <activity android:name=".ui.ListaContactosActivity" android:exported="true"/>
+        <activity
+            android:name=".ui.ListaContactosActivity"
+            android:exported="true"
+            android:label="Contactos" />
         <activity android:name=".ui.LlamadasActivity" android:exported="true"/>
         <activity android:name=".ui.PerfilActivity" />
+
 
 
     </application>
